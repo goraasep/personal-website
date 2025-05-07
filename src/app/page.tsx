@@ -84,7 +84,7 @@ export default function Home() {
             </li>
             <li>
               <strong>Telkom University</strong> (2015–2019): Electrical
-              Engineering, GPA: 3.23
+              Engineering
             </li>
           </ul>
         </div>
