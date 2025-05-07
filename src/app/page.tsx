@@ -1,103 +1,241 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="min-h-screen bg-gradient-to-br from-white to-sky-50 text-gray-800 px-6 py-12">
+      {/* Hero Section */}
+      <section className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8">
+        {/* Text */}
+        <div className="flex-1 text-center md:text-left">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+            Hi, I'm Gora<span className="text-sky-600">.</span>
+          </h1>
+          <p className="mt-4 text-lg text-gray-600">
+            Software Engineer specializing in web and IoT solutions.
+          </p>
+          <div className="mt-6 flex justify-center md:justify-start gap-4">
+            <Link
+              href="/projects"
+              className="px-6 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition"
+            >
+              View Projects
+            </Link>
+            <Link
+              href="https://wa.me/6282218328615?text=Hi!%20%F0%9F%91%8B%20I%20saw%20your%20portfolio%20and%20I%27m%20interested%20in%20hiring%20you.%20Could%20we%20discuss%20a%20potential%20project?"
+              className="px-6 py-2 border border-sky-600 text-sky-600 rounded-lg hover:bg-sky-50 transition"
+            >
+              Contact Me
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+
+        {/* Profile Image */}
+        <div className="flex-1 flex justify-center">
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src="/profile.jpg" // Replace with your own image
+            alt="Gora"
+            width={200}
+            height={200}
+            className="rounded-full shadow-lg object-cover"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        </div>
+      </section>
+
+      {/* Resume Section */}
+      <section className="mt-24 max-w-5xl mx-auto px-4">
+        <h2 className="text-3xl font-bold mb-8 text-center">Resume</h2>
+
+        {/* Work Experience */}
+        <div className="mb-12">
+          <h3 className="text-2xl font-semibold mb-4 text-sky-700">
+            Work Experience
+          </h3>
+          <ul className="list-disc list-inside text-gray-700 space-y-2">
+            <li>
+              <strong>CV Mechtech Instrument Solutions</strong> (Jan 2024 –
+              Present): Developed industrial IoT platforms for real-time
+              monitoring and data processing. Integrated IoT devices with cloud
+              platforms.
+            </li>
+            <li>
+              <strong>PT Inovasi Otomasi Teknologi</strong> (Jan 2022 – Jan
+              2024): Built and maintained IoT platform back-end and web
+              dashboards. Developed software for embedded hardware and sensor
+              integration.
+            </li>
+            <li>
+              <strong>PT Hariff Daya Tunggal Engineering</strong> (Jun 2020 –
+              Dec 2021): Engineered IoT device back-end and web dashboards.
+              Developed firmware for embedded sensors.
+            </li>
+          </ul>
+        </div>
+
+        {/* Education */}
+        <div className="mb-12">
+          <h3 className="text-2xl font-semibold mb-4 text-sky-700">
+            Education
+          </h3>
+          <ul className="list-disc list-inside text-gray-700 space-y-2">
+            <li>
+              <strong>Purwadhika Digital Technology School</strong> (2024–2025):
+              Software Engineering (Digital Talent Incubator)
+            </li>
+            <li>
+              <strong>Telkom University</strong> (2015–2019): Electrical
+              Engineering, GPA: 3.23
+            </li>
+          </ul>
+        </div>
+
+        {/* Certifications */}
+        <div className="mb-12">
+          <h3 className="text-2xl font-semibold mb-4 text-sky-700">
+            Licenses & Certifications
+          </h3>
+          <ul className="list-disc list-inside text-gray-700">
+            <li>
+              Purwadhika Digital Technology School (2025): Software Engineering
+            </li>
+          </ul>
+        </div>
+
+        {/* Skills */}
+        <div className="mb-12">
+          <h3 className="text-2xl font-semibold mb-4 text-sky-700">Skills</h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-gray-700">
+            <div className="flex items-center gap-2">
+              <Image
+                src="/tech/python.svg"
+                alt="Python"
+                width={24}
+                height={24}
+              />
+              Python
+            </div>
+            <div className="flex items-center gap-2">
+              <Image src="/tech/cpp.png" alt="C/C++" width={24} height={24} />
+              C/C++
+            </div>
+            <div className="flex items-center gap-2">
+              <Image src="/tech/java.png" alt="Java" width={24} height={24} />
+              Java
+            </div>
+            <div className="flex items-center gap-2">
+              <Image
+                src="/tech/js.png"
+                alt="JavaScript"
+                width={24}
+                height={24}
+              />
+              JavaScript
+            </div>
+            <div className="flex items-center gap-2">
+              <Image src="/tech/php.svg" alt="PHP" width={24} height={24} />
+              PHP
+            </div>
+          </div>
+        </div>
+
+        {/* Tech Stack */}
+        <div className="mb-12">
+          <h3 className="text-2xl font-semibold mb-4 text-sky-700">Tech</h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-gray-700">
+            <div className="flex items-center gap-2">
+              <Image
+                src="/tech/laravel.svg"
+                alt="Laravel"
+                width={24}
+                height={24}
+              />
+              Laravel
+            </div>
+            <div className="flex items-center gap-2">
+              <Image
+                src="/tech/ci.png"
+                alt="CodeIgniter 3"
+                width={24}
+                height={24}
+              />
+              CodeIgniter 3
+            </div>
+            <div className="flex items-center gap-2">
+              <Image
+                src="/tech/next.svg"
+                alt="Next.js"
+                width={24}
+                height={24}
+              />
+              Next.js
+            </div>
+            <div className="flex items-center gap-2">
+              <Image
+                src="/tech/spring-boot.svg"
+                alt="Spring Boot"
+                width={24}
+                height={24}
+              />
+              Spring Boot
+            </div>
+            <div className="flex items-center gap-2">
+              <Image
+                src="/tech/nodered.svg"
+                alt="Node-RED"
+                width={24}
+                height={24}
+              />
+              Node-RED
+            </div>
+            <div className="flex items-center gap-2">
+              <Image
+                src="/tech/grafana.svg"
+                alt="Grafana"
+                width={24}
+                height={24}
+              />
+              Grafana
+            </div>
+            <div className="flex items-center gap-2">
+              <Image src="/tech/mysql.png" alt="MySQL" width={24} height={24} />
+              MySQL
+            </div>
+            <div className="flex items-center gap-2">
+              <Image
+                src="/tech/postgresql.svg"
+                alt="PostgreSQL"
+                width={24}
+                height={24}
+              />
+              PostgreSQL
+            </div>
+          </div>
+        </div>
+
+        {/* Contact Info */}
+        <div className="text-center text-gray-600 text-sm mt-12">
+          <p>
+            <strong>GORA ASEP SETIANA</strong> — Software Engineer
+          </p>
+          <p>Bandung | gora.asep@gmail.com</p>
+          <p className="mt-2">
+            <a
+              href="https://linkedin.com/in/gora-asep-b55271129"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-sky-600 text-white px-4 py-2 rounded-md hover:bg-sky-700 transition"
+            >
+              <Image
+                src="/tech/linkedin.svg" // Make sure this file exists in your /public/logos folder
+                alt="LinkedIn"
+                width={20}
+                height={20}
+              />
+              LinkedIn Profile
+            </a>
+          </p>
+        </div>
+      </section>
+    </main>
   );
 }
