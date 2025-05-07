@@ -218,22 +218,40 @@ export default function Home() {
             <strong>GORA ASEP SETIANA</strong> — Software Engineer
           </p>
           <p>Bandung | gora.asep@gmail.com</p>
-          <p className="mt-2">
-            <a
-              href="https://linkedin.com/in/gora-asep-b55271129"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-sky-600 text-white px-4 py-2 rounded-md hover:bg-sky-700 transition"
-            >
-              <Image
-                src="/tech/linkedin.svg" // Make sure this file exists in your /public/logos folder
-                alt="LinkedIn"
-                width={20}
-                height={20}
-              />
-              LinkedIn Profile
-            </a>
-          </p>
+          <div className="flex justify-center gap-2 mt-2">
+            <p>
+              <a
+                href="https://linkedin.com/in/gora-asep-b55271129"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-sky-600 text-white px-4 py-2 rounded-md hover:bg-sky-700 transition"
+              >
+                <Image
+                  src="/tech/linkedin.svg" // Make sure this file exists in your /public/logos folder
+                  alt="LinkedIn"
+                  width={20}
+                  height={20}
+                />
+                LinkedIn
+              </a>
+            </p>
+            <p>
+              <a
+                href="https://github.com/goraasep" // Update with your actual GitHub URL
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-900 transition"
+              >
+                <Image
+                  src="/tech/github-mark-white.png" // Make sure the icon is available at public/logos/github.svg
+                  alt="GitHub"
+                  width={20}
+                  height={20}
+                />
+                GitHub
+              </a>
+            </p>
+          </div>
         </div>
       </section>
     </main>
