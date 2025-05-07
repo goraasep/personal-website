@@ -9,7 +9,7 @@ export default function Home() {
         {/* Text */}
         <div className="flex-1 text-center md:text-left">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-            Hi, I'm Gora<span className="text-sky-600">.</span>
+            Hi, I&apos;m Gora<span className="text-sky-600">.</span>
           </h1>
           <p className="mt-4 text-lg text-gray-600">
             Software Engineer specializing in web and IoT solutions.
