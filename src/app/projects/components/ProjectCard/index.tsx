@@ -13,12 +13,6 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
 
   return (
     <div className="bg-[#1a1a2e]/80 rounded-xl border border-cyan-400/30 hover:border-cyan-400/60 transition-all duration-300 p-4 group relative corner-accent glow-on-hover animate-slide-in-up">
-      {/* Status indicator */}
-      <div className="absolute top-2 right-2 flex items-center gap-1 px-2 py-1 bg-cyan-400/10 border border-cyan-400/30 rounded-full text-xs text-cyan-400">
-        <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full animate-pulse"></span>
-        Live
-      </div>
-      
       {/* Carousel */}
       <div ref={ref} className="keen-slider rounded-xl overflow-hidden mb-4 border border-cyan-400/20 group-hover:border-cyan-400/40 transition-colors relative">
         {project.images.map((src, i) => (
