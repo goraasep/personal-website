@@ -3,10 +3,24 @@ import Link from "next/link";
 import { FC } from "react";
 import ProjectCard from "./components/ProjectCard";
 import { projects } from "@/const/projects";
+import { HexagonParticles, DigitalRain, DataStreams, StatusIndicator } from "../components/CyberEffects";
 
 const Projects: FC = () => {
   return (
     <main className="min-h-screen bg-[#0a0a0f] cyber-grid text-cyan-100 px-4 sm:px-6 py-8 scanlines relative overflow-hidden">
+      {/* Cyberpunk Effects */}
+      <HexagonParticles />
+      <DigitalRain />
+      <DataStreams />
+      
+      {/* Status Bar */}
+      <div className="fixed top-4 right-4 z-50 bg-black/80 border border-cyan-400/30 rounded-lg p-3 backdrop-blur-sm">
+        <div className="flex flex-col gap-2">
+          <StatusIndicator label="PROJECTS" status="online" />
+          <StatusIndicator label="LOADING" status="ready" />
+        </div>
+      </div>
+      
       {/* Decorative Background Elements */}
       <div className="absolute top-20 right-10 w-64 h-64 bg-cyan-400/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 left-10 w-96 h-96 bg-pink-400/5 rounded-full blur-3xl"></div>
@@ -23,10 +37,12 @@ const Projects: FC = () => {
         </div>
 
         {/* Header Section */}
-        <div className="mb-8 sm:mb-12 animate-slide-in-up">
-          <h1 className="text-3xl sm:text-5xl font-bold mb-3 text-cyan-400">
+        <div className="mb-8 sm:mb-12 animate-slide-in-up relative">
+          <h1 className="text-3xl sm:text-5xl font-bold mb-3 text-cyan-400 glitch-text">
             &lt; Projects /&gt;
           </h1>
+          <div className="absolute -top-4 -left-4 text-cyan-400/20 text-6xl font-mono">{'['}</div>
+          <div className="absolute -top-4 -right-4 text-pink-400/20 text-6xl font-mono">{']'}</div>
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 via-pink-400 to-purple-400 rounded-full mb-4"></div>
           <p className="text-gray-400 text-lg">A collection of my recent work and side projects</p>
           <div className="mt-4 flex flex-wrap gap-4 text-sm text-gray-400">

@@ -1,14 +1,36 @@
 import Image from "next/image";
 import Link from "next/link";
+import {
+  HexagonParticles,
+  DigitalRain,
+  DataStreams,
+  StatusIndicator,
+  CornerBrackets,
+  CircuitLines,
+} from "./components/CyberEffects";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#0a0a0f] cyber-grid text-cyan-100 px-6 py-12 scanlines relative overflow-hidden">
+      {/* Cyberpunk Effects */}
+      <HexagonParticles />
+      <DigitalRain />
+      <DataStreams />
+
       {/* Decorative Background Elements */}
       <div className="absolute top-20 left-10 w-64 h-64 bg-cyan-400/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-400/5 rounded-full blur-3xl"></div>
       <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-purple-400/5 rounded-full blur-3xl"></div>
-      
+
+      {/* Status Bar */}
+      <div className="fixed top-4 right-4 z-50 bg-black/80 border border-cyan-400/30 rounded-lg p-3 backdrop-blur-sm">
+        <div className="flex flex-col gap-2">
+          <StatusIndicator label="SYSTEM" status="online" />
+          <StatusIndicator label="NEURAL" status="active" />
+          <StatusIndicator label="MATRIX" status="ready" />
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8 relative z-10">
         {/* Text */}
@@ -17,8 +39,10 @@ export default function Home() {
             <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></span>
             Available for work
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-cyan-400 animate-slide-in-left stagger-1">
-            Hi, I&apos;m Gora<span className="text-pink-400">.</span>
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-cyan-400 animate-slide-in-left stagger-1 relative">
+            <span className="glitch-text">Hi, I&apos;m Gora</span>
+            <span className="text-pink-400">.</span>
+            <span className="terminal-cursor"></span>
           </h1>
           <p className="mt-4 text-lg text-gray-300 animate-slide-in-left stagger-2">
             Software Engineer specializing in web and IoT solutions.
@@ -54,20 +78,36 @@ export default function Home() {
         <div className="flex-1 flex justify-center animate-slide-in-right">
           <div className="relative">
             {/* Rotating ring */}
-            <div className="absolute inset-0 rounded-full border-2 border-cyan-400/20 animate-spin" style={{animationDuration: '20s'}}></div>
-            <div className="absolute inset-4 rounded-full border-2 border-pink-400/20 animate-spin" style={{animationDuration: '15s', animationDirection: 'reverse'}}></div>
-            
+            <div
+              className="absolute inset-0 rounded-full border-2 border-cyan-400/20 animate-spin"
+              style={{ animationDuration: "20s" }}
+            ></div>
+            <div
+              className="absolute inset-4 rounded-full border-2 border-pink-400/20 animate-spin"
+              style={{
+                animationDuration: "15s",
+                animationDirection: "reverse",
+              }}
+            ></div>
+            <div
+              className="absolute inset-8 rounded-full border border-purple-400/20 animate-spin"
+              style={{ animationDuration: "10s" }}
+            ></div>
+
             <div className="absolute inset-0 bg-cyan-400/20 rounded-full blur-2xl animate-pulse"></div>
+            <div className="absolute inset-0 holographic rounded-full"></div>
             <Image
               src="/profile.jpg"
               alt="Gora"
               width={200}
               height={200}
-              className="rounded-full border-2 border-cyan-400/50 object-cover relative z-10 hover:border-cyan-400 transition-colors float"
+              className="rounded-full border-2 border-cyan-400/50 object-cover relative z-10 hover:border-cyan-400 transition-colors float neon-pulse"
             />
-            
+
             {/* Corner accents */}
             <div className="absolute -top-2 -left-2 w-8 h-8 border-l-2 border-t-2 border-cyan-400/50"></div>
+            <div className="absolute -top-2 -right-2 w-8 h-8 border-r-2 border-t-2 border-purple-400/50"></div>
+            <div className="absolute -bottom-2 -left-2 w-8 h-8 border-l-2 border-b-2 border-pink-400/50"></div>
             <div className="absolute -bottom-2 -right-2 w-8 h-8 border-r-2 border-b-2 border-pink-400/50"></div>
           </div>
         </div>
@@ -75,65 +115,109 @@ export default function Home() {
 
       {/* Resume Section */}
       <section className="mt-24 max-w-5xl mx-auto px-4 relative z-10">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-2 text-cyan-400 animate-slide-in-up">&lt; Resume /&gt;</h2>
+        <div className="text-center mb-12 relative">
+          <h2 className="text-3xl font-bold mb-2 text-cyan-400 animate-slide-in-up glitch-text">
+            &lt; Resume /&gt;
+          </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 via-pink-400 to-purple-400 mx-auto rounded-full"></div>
+          <div className="absolute -top-4 -left-4 text-cyan-400/20 text-6xl font-mono">
+            {"{"}
+          </div>
+          <div className="absolute -top-4 -right-4 text-pink-400/20 text-6xl font-mono">
+            {"}"}
+          </div>
         </div>
 
         {/* Work Experience */}
-        <div className="mb-12 bg-[#1a1a2e]/80 border border-cyan-400/30 rounded-lg p-6 hover:border-cyan-400/60 transition-colors relative corner-accent glow-on-hover animate-slide-in-up stagger-1">
+        <div className="mb-12 bg-[#1a1a2e]/80 border border-cyan-400/30 rounded-lg p-6 hover:border-cyan-400/60 transition-colors relative corner-accent glow-on-hover animate-slide-in-up stagger-1 overflow-hidden">
+          <CircuitLines />
+          <CornerBrackets />
           <h3 className="text-2xl font-semibold mb-4 text-cyan-400">
             Work Experience
           </h3>
           <ul className="list-none text-gray-300 space-y-3 text-sm">
             <li className="border-l-2 border-cyan-400/50 pl-4 hover:border-cyan-400 transition-colors">
-              <strong className="text-cyan-400">CV Mechtech Instrument Solutions</strong> <span className="text-gray-400">(Jan 2024 – Present)</span>: Developed industrial IoT platforms for real-time
-              monitoring and data processing. Integrated IoT devices with cloud
-              platforms.
+              <strong className="text-cyan-400">AssistX Enterprise</strong>{" "}
+              <span className="text-gray-400">(Jul 2025 – Present)</span> —{" "}
+              <span className="text-cyan-300">RnD Engineer (IoT)</span>:
+              Developed SNMP and MQTT software for UPS monitoring, IoT firmware
+              for ATM alert systems, and remote speaker systems for railroads.
             </li>
             <li className="border-l-2 border-cyan-400/50 pl-4 hover:border-cyan-400 transition-colors">
-              <strong className="text-cyan-400">PT Inovasi Otomasi Teknologi</strong> <span className="text-gray-400">(Jan 2022 – Jan 2024)</span>: Built and maintained IoT platform back-end and web
-              dashboards. Developed software for embedded hardware and sensor
-              integration.
+              <strong className="text-cyan-400">
+                CV Mechtech Instrument Solutions
+              </strong>{" "}
+              <span className="text-gray-400">(Jan 2024 – Jul 2025)</span> —{" "}
+              <span className="text-cyan-300">Software Engineer</span>:
+              Developed industrial IoT platforms for real-time monitoring and
+              data processing. Integrated IoT devices with cloud platforms.
             </li>
             <li className="border-l-2 border-cyan-400/50 pl-4 hover:border-cyan-400 transition-colors">
-              <strong className="text-cyan-400">PT Hariff Daya Tunggal Engineering</strong> <span className="text-gray-400">(Jun 2020 – Dec 2021)</span>: Engineered IoT device back-end and web dashboards.
-              Developed firmware for embedded sensors.
+              <strong className="text-cyan-400">
+                PT Inovasi Otomasi Teknologi
+              </strong>{" "}
+              <span className="text-gray-400">(Jan 2022 – Jan 2024)</span> —{" "}
+              <span className="text-cyan-300">Software Engineer</span>: Built
+              and maintained IoT platform back-end and web dashboards. Developed
+              software for embedded hardware and sensor integration.
+            </li>
+            <li className="border-l-2 border-cyan-400/50 pl-4 hover:border-cyan-400 transition-colors">
+              <strong className="text-cyan-400">
+                PT Hariff Daya Tunggal Engineering
+              </strong>{" "}
+              <span className="text-gray-400">(Jun 2020 – Dec 2021)</span> —{" "}
+              <span className="text-cyan-300">Embedded Hardware Engineer</span>:
+              Engineered IoT device back-end and web dashboards. Developed
+              firmware for embedded sensors.
             </li>
           </ul>
         </div>
 
         {/* Education */}
-        <div className="mb-12 bg-[#1a1a2e]/80 border border-pink-400/30 rounded-lg p-6 hover:border-pink-400/60 transition-colors relative corner-accent glow-on-hover animate-slide-in-up stagger-2">
+        <div className="mb-12 bg-[#1a1a2e]/80 border border-pink-400/30 rounded-lg p-6 hover:border-pink-400/60 transition-colors relative corner-accent glow-on-hover animate-slide-in-up stagger-2 overflow-hidden">
+          <CircuitLines />
+          <CornerBrackets />
           <h3 className="text-2xl font-semibold mb-4 text-pink-400">
             Education
           </h3>
           <ul className="list-none text-gray-300 space-y-3 text-sm">
             <li className="border-l-2 border-pink-400/50 pl-4 hover:border-pink-400 transition-colors">
-              <strong className="text-pink-400">Purwadhika Digital Technology School</strong> <span className="text-gray-400">(2024–2025)</span>:
-              Software Engineering (Digital Talent Incubator)
+              <strong className="text-pink-400">
+                Purwadhika Digital Technology School
+              </strong>{" "}
+              <span className="text-gray-400">(2024–2025)</span>: Software
+              Engineering (Digital Talent Incubator)
             </li>
             <li className="border-l-2 border-pink-400/50 pl-4 hover:border-pink-400 transition-colors">
-              <strong className="text-pink-400">Telkom University</strong> <span className="text-gray-400">(2015–2019)</span>: Electrical
+              <strong className="text-pink-400">Telkom University</strong>{" "}
+              <span className="text-gray-400">(2015–2019)</span>: Electrical
               Engineering
             </li>
           </ul>
         </div>
 
         {/* Certifications */}
-        <div className="mb-12 bg-[#1a1a2e]/80 border border-purple-400/30 rounded-lg p-6 hover:border-purple-400/60 transition-colors relative corner-accent glow-on-hover animate-slide-in-up stagger-3">
+        <div className="mb-12 bg-[#1a1a2e]/80 border border-purple-400/30 rounded-lg p-6 hover:border-purple-400/60 transition-colors relative corner-accent glow-on-hover animate-slide-in-up stagger-3 overflow-hidden">
+          <CircuitLines />
+          <CornerBrackets />
           <h3 className="text-2xl font-semibold mb-4 text-purple-400">
             Licenses & Certifications
           </h3>
           <ul className="list-none text-gray-300 text-sm">
             <li className="border-l-2 border-purple-400/50 pl-4 hover:border-purple-400 transition-colors">
-              <strong className="text-purple-400">Purwadhika Digital Technology School</strong> <span className="text-gray-400">(2025)</span>: Software Engineering
+              <strong className="text-purple-400">
+                Purwadhika Digital Technology School
+              </strong>{" "}
+              <span className="text-gray-400">(2025)</span>: Software
+              Engineering
             </li>
           </ul>
         </div>
 
         {/* Skills */}
-        <div className="mb-12 bg-[#1a1a2e]/80 border border-cyan-400/30 rounded-lg p-6 hover:border-cyan-400/60 transition-colors relative corner-accent glow-on-hover animate-slide-in-up stagger-4">
+        <div className="mb-12 bg-[#1a1a2e]/80 border border-cyan-400/30 rounded-lg p-6 hover:border-cyan-400/60 transition-colors relative corner-accent glow-on-hover animate-slide-in-up stagger-4 overflow-hidden">
+          <CircuitLines />
+          <CornerBrackets />
           <h3 className="text-2xl font-semibold mb-4 text-cyan-400">Skills</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-gray-300">
             <div className="flex items-center gap-2 bg-black/30 p-3 rounded border border-cyan-400/20 hover:border-cyan-400/60 hover:bg-cyan-400/5 transition-all">
@@ -170,8 +254,12 @@ export default function Home() {
         </div>
 
         {/* Tech Stack */}
-        <div className="mb-12 bg-[#1a1a2e]/80 border border-pink-400/30 rounded-lg p-6 hover:border-pink-400/60 transition-colors relative corner-accent glow-on-hover animate-slide-in-up stagger-5">
-          <h3 className="text-2xl font-semibold mb-4 text-pink-400">Tech Stack</h3>
+        <div className="mb-12 bg-[#1a1a2e]/80 border border-pink-400/30 rounded-lg p-6 hover:border-pink-400/60 transition-colors relative corner-accent glow-on-hover animate-slide-in-up stagger-5 overflow-hidden">
+          <CircuitLines />
+          <CornerBrackets />
+          <h3 className="text-2xl font-semibold mb-4 text-pink-400">
+            Tech Stack
+          </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-gray-300">
             <div className="flex items-center gap-2 bg-black/30 p-3 rounded border border-pink-400/20 hover:border-pink-400/60 hover:bg-pink-400/5 transition-all">
               <Image
@@ -244,9 +332,13 @@ export default function Home() {
         </div>
 
         {/* Contact Info */}
-        <div className="text-center text-gray-300 text-sm mt-12 bg-[#1a1a2e]/80 border border-purple-400/30 rounded-lg p-6 hover:border-purple-400/60 transition-colors">
+        <div className="text-center text-gray-300 text-sm mt-12 bg-[#1a1a2e]/80 border border-purple-400/30 rounded-lg p-6 hover:border-purple-400/60 transition-colors relative overflow-hidden">
+          <CircuitLines />
+          <CornerBrackets />
           <p className="text-lg">
-            <strong className="text-cyan-400">GORA ASEP SETIANA</strong> <span className="text-gray-500">—</span> <span className="text-purple-400">Software Engineer</span>
+            <strong className="text-cyan-400">GORA ASEP SETIANA</strong>{" "}
+            <span className="text-gray-500">—</span>{" "}
+            <span className="text-purple-400">Software Engineer</span>
           </p>
           <p className="mt-2">Bandung | gora.asep@gmail.com</p>
           <div className="flex justify-center gap-4 mt-4">

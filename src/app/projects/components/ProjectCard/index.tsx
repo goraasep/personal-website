@@ -1,6 +1,7 @@
 import { Project } from "@/type/project";
 import { useKeenSlider } from "keen-slider/react";
 import { FC } from "react";
+import { CornerBrackets, CircuitLines } from "@/app/components/CyberEffects";
 interface ProjectCardProps {
   project: Project;
 }
@@ -12,7 +13,9 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
   });
 
   return (
-    <div className="bg-[#1a1a2e]/80 rounded-xl border border-cyan-400/30 hover:border-cyan-400/60 transition-all duration-300 p-4 group relative corner-accent glow-on-hover animate-slide-in-up">
+    <div className="bg-[#1a1a2e]/80 rounded-xl border border-cyan-400/30 hover:border-cyan-400/60 transition-all duration-300 p-4 group relative corner-accent glow-on-hover animate-slide-in-up overflow-hidden">
+      <CircuitLines />
+      <CornerBrackets className="opacity-0 group-hover:opacity-100 transition-opacity" />
       {/* Carousel */}
       <div ref={ref} className="keen-slider rounded-xl overflow-hidden mb-4 border border-cyan-400/20 group-hover:border-cyan-400/40 transition-colors relative">
         {project.images.map((src, i) => (
